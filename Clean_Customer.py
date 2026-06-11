@@ -62,3 +62,12 @@ customers_df.show(5,truncate=False)
 # Final Record Count
 print("\nFinal Row Count:")
 print(customers_df.count())
+
+
+#saving the new  data
+
+customers_df.write.mode(
+    "overwrite"
+).parquet(
+    "output/silver/customers"
+)
